@@ -1,0 +1,32 @@
+{
+  "name": "@a2ui-demo/card",
+  "version": "0.1.0",
+  "description": "Card — layout container with optional title. Registered into the @a2ui-demo/catalog A2UI catalog.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly -p tsconfig.lib.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit -p tsconfig.lib.json"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.0.1",
+    "@vanilla-extract/css": "^1.16.0"
+  },
+  "publishConfig": { "access": "public" }
+}

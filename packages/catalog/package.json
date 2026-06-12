@@ -1,0 +1,38 @@
+{
+  "name": "@a2ui-demo/catalog",
+  "version": "0.1.0",
+  "description": "Custom A2UI v0.9 catalog: registers @a2ui-demo/button, /card, /text, /text-input with the @a2ui/react renderer.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./manifest.json": "./src/catalog.manifest.json"
+  },
+  "files": ["dist", "src/catalog.manifest.json", "README.md"],
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly -p tsconfig.lib.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit -p tsconfig.lib.json"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "@a2ui-demo/button": "*",
+    "@a2ui-demo/card": "*",
+    "@a2ui-demo/text": "*",
+    "@a2ui-demo/text-input": "*",
+    "@a2ui/react": "^0.10.0",
+    "@a2ui/web_core": "^0.10.0",
+    "zod": "^3.23.8"
+  },
+  "publishConfig": { "access": "public" }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "a2ui-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Nx monorepo demonstrating how A2UI (Agent-to-User Interface) works with React, Vite, Vitest, Vanilla Extract, and Storybook.",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "nx run-many -t build",
+    "test": "nx run-many -t test",
+    "lint": "nx run-many -t lint",
+    "storybook": "nx run storybook:storybook",
+    "build:storybook": "nx run storybook:build-storybook",
+    "agent:dev": "cd server && uv run uvicorn a2ui_agent_server.main:app --reload --port 8000"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "@vanilla-extract/css": "^1.16.0",
+    "@vanilla-extract/vite-plugin": "^4.0.18",
+    "@vitejs/plugin-react": "^4.3.2",
+    "happy-dom": "^15.7.4",
+    "nx": "^20.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8",
+    "vite-plugin-dts": "^4.2.4",
+    "vitest": "^2.1.2"
+  },
+  "packageManager": "npm@10.8.2",
+  "engines": {
+    "node": ">=20"
+  }
+}

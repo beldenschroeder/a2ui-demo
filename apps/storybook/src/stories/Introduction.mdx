@@ -1,0 +1,50 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction" />
+
+# A2UI Demo
+
+This Storybook is the live catalogue for the **publishable component packages** in this monorepo:
+
+| Package                       | What it ships                                                |
+| ----------------------------- | ------------------------------------------------------------ |
+| `@a2ui-demo/button`           | A `<Button>` React component (Vanilla Extract styles).       |
+| `@a2ui-demo/text-input`       | A `<TextInput>` React component.                             |
+| `@a2ui-demo/card`             | A `<Card>` container.                                        |
+| `@a2ui-demo/text`             | A `<Text>` display component.                                |
+| `@a2ui-demo/catalog`          | An A2UI catalog that registers all four with `@a2ui/react`.  |
+
+Each component story has **two variants**:
+
+1. **Direct** — the React component used as-is in JSX. This is how a consumer would import it from npm.
+2. **Via A2UI** — the same component, rendered from a JSON A2UI message through the custom catalog. This is what an agent would emit.
+
+That dual view is the whole point of A2UI: the components don't know they're being driven by an agent — the catalog is the only glue that turns a JSON declaration into a real React tree.
+
+## The 3-message lifecycle
+
+Every A2UI sample is just three messages over the wire:
+
+```jsonc
+// 1. Claim a surface and declare which catalog is allowed.
+{ "version": "v0.9", "createSurface":    { "surfaceId": "demo", "catalogId": "https://a2ui-demo.local/catalogs/custom/v1/catalog.json" } }
+
+// 2. Declare the component tree by id. Children reference other ids.
+{ "version": "v0.9", "updateComponents": { "surfaceId": "demo", "components": [
+    { "id": "root",  "component": "Card",  "title": "Hello", "child": "msg" },
+    { "id": "msg",   "component": "Text",  "text": { "path": "/greeting" }, "weight": "bold" }
+] } }
+
+// 3. Supply the data the bindings resolve against.
+{ "version": "v0.9", "updateDataModel":  { "surfaceId": "demo", "path": "/", "value": { "greeting": "Hi Ada!" } } }
+```
+
+Three kinds of values:
+
+- **Literal**: `"text": "Hello"`.
+- **Path binding**: `"text": { "path": "/greeting" }` — JSON Pointer into the data model.
+- **Function call**: `"text": { "call": "formatDate", "args": {...}, "returnType": "string" }` — only catalog-declared functions can be called.
+
+## Catalog = security boundary
+
+The agent can only request components from the catalog. `@a2ui-demo/catalog` decides what's allowed. Add a new component → publish a new package → register it in the catalog. Don't want an agent using a particular component? Don't register it.

@@ -1,0 +1,23 @@
+{
+  "name": "storybook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/storybook/src",
+  "projectType": "application",
+  "targets": {
+    "storybook": {
+      "executor": "nx:run-commands",
+      "options": { "command": "npm run storybook", "cwd": "apps/storybook" }
+    },
+    "build-storybook": {
+      "executor": "nx:run-commands",
+      "options": { "command": "npm run build-storybook", "cwd": "apps/storybook" },
+      "outputs": ["{projectRoot}/storybook-static"]
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": { "command": "npm run lint", "cwd": "apps/storybook" }
+    }
+  },
+  "implicitDependencies": ["button", "card", "text", "text-input", "catalog"],
+  "tags": ["scope:app"]
+}

@@ -1,0 +1,29 @@
+node_modules/
+dist/
+storybook-static/
+.nx/
+*.tsbuildinfo
+.vite/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.python-version
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Test / coverage
+coverage/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/

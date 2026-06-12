@@ -1,0 +1,30 @@
+{
+  "name": "@a2ui-demo/storybook",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Storybook site that demos every @a2ui-demo/* package.",
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build -o storybook-static",
+    "test": "echo \"no storybook tests\" && exit 0",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@a2ui-demo/button": "*",
+    "@a2ui-demo/card": "*",
+    "@a2ui-demo/catalog": "*",
+    "@a2ui-demo/text": "*",
+    "@a2ui-demo/text-input": "*",
+    "@a2ui/react": "^0.10.0",
+    "@a2ui/web_core": "^0.10.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-interactions": "^8.3.5",
+    "@storybook/blocks": "^8.3.5",
+    "@storybook/react": "^8.3.5",
+    "@storybook/react-vite": "^8.3.5",
+    "storybook": "^8.3.5"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "catalogId": "https://a2ui-demo.local/catalogs/custom/v1/catalog.json",
+  "version": "v0.9",
+  "description": "Custom A2UI catalog for the a2ui-demo monorepo. Each entry maps to a React component from the matching @a2ui-demo/* package.",
+  "components": {
+    "Card": {
+      "description": "Framed container with an optional title and a single child component reference.",
+      "props": {
+        "title": "DynamicString — optional. Heading shown at the top.",
+        "child": "ComponentId — optional. The id of another component to render inside."
+      }
+    },
+    "Text": {
+      "description": "Display text.",
+      "props": {
+        "text": "DynamicString — required. The text to render.",
+        "weight": "Literal — optional. One of 'normal' | 'bold' | 'subtle'. Defaults to 'normal'."
+      }
+    },
+    "Button": {
+      "description": "Click button. Emits the onClick action.",
+      "props": {
+        "label": "DynamicString — required. Button text.",
+        "variant": "Literal — optional. One of 'primary' | 'secondary'. Defaults to 'primary'.",
+        "onClick": "Action — optional. Fires when the user clicks."
+      }
+    },
+    "TextInput": {
+      "description": "Single-line text field. The 'value' prop accepts an initial value (literal or path-bound). Local edits stay client-side; the agent can read the resulting data model on the next round-trip.",
+      "props": {
+        "label": "DynamicString — optional.",
+        "value": "DynamicString — optional initial value, bindable to a data model path.",
+        "placeholder": "DynamicString — optional.",
+        "onChange": "Action — optional. Fires when the user edits the value."
+      }
+    }
+  }
+}

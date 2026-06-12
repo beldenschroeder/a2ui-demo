@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@a2ui-demo/button": ["packages/button/src/index.ts"],
+      "@a2ui-demo/card": ["packages/card/src/index.ts"],
+      "@a2ui-demo/text": ["packages/text/src/index.ts"],
+      "@a2ui-demo/text-input": ["packages/text-input/src/index.ts"],
+      "@a2ui-demo/catalog": ["packages/catalog/src/index.ts"]
+    }
+  }
+}
