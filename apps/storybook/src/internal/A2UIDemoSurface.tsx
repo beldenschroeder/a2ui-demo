@@ -30,7 +30,9 @@ export function A2UIDemoSurface({
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    const sub = processor.onSurfaceCreated((s) => setSurface(s));
+    const sub = processor.onSurfaceCreated((s: SurfaceModel<ReactComponentImplementation>) =>
+      setSurface(s),
+    );
     return () => sub.unsubscribe?.();
   }, [processor]);
 
@@ -52,7 +54,11 @@ export function A2UIDemoSurface({
   }
   return (
     <section className={styles.frame} aria-label={label}>
-      {surface ? <A2uiSurface surface={surface} /> : <div className={styles.empty}>{emptyState}</div>}
+      {surface ? (
+        <A2uiSurface surface={surface} />
+      ) : (
+        <div className={styles.empty}>{emptyState}</div>
+      )}
     </section>
   );
 }

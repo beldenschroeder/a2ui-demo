@@ -1,6 +1,6 @@
 # a2ui-demo
 
-A minimal Nx monorepo that shows how [A2UI](https://a2ui.org/) works end-to-end with a **custom catalog of your own components**.
+A minimal Nx monorepo that shows how [A2UI](https://a2ui.org/) works end-to-end with a custom catalog.
 
 - Each component is its own publishable npm library under `packages/*`.
 - `@a2ui-demo/catalog` registers those components with the A2UI renderer.
