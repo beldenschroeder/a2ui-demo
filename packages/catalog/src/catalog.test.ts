@@ -5,7 +5,7 @@ import { agentInstructions } from './instructions';
 
 describe('customCatalog', () => {
   it('exposes all four registered components', () => {
-    expect(Object.keys(customCatalog.components).sort()).toEqual(
+    expect([...customCatalog.components.keys()].sort()).toEqual(
       ['Button', 'Card', 'Text', 'TextInput'],
     );
   });
