@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { z } from 'zod';
-import { CommonSchemas, createComponentImplementation } from '@a2ui/react/v0_9';
+import { createComponentImplementation } from '@a2ui/react/v0_9';
+import { CommonSchemas } from '@a2ui/web_core/v0_9';
 
 import { Button } from '@a2ui-demo/button';
 import { Card } from '@a2ui-demo/card';
