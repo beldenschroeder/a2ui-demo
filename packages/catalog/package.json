@@ -30,7 +30,7 @@
     "@a2ui-demo/card": "*",
     "@a2ui-demo/text": "*",
     "@a2ui-demo/text-input": "*",
-    "@a2ui/react": "^0.10.0",
+    "@a2ui/react": "0.10.0",
     "@a2ui/web_core": "^0.10.0",
     "zod": "^3.23.8"
   },

@@ -16,15 +16,15 @@
     "@a2ui-demo/catalog": "*",
     "@a2ui-demo/text": "*",
     "@a2ui-demo/text-input": "*",
-    "@a2ui/react": "^0.10.0",
+    "@a2ui/react": "0.10.0",
     "@a2ui/web_core": "^0.10.0"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^8.3.5",
-    "@storybook/addon-interactions": "^8.3.5",
-    "@storybook/blocks": "^8.3.5",
-    "@storybook/react": "^8.3.5",
-    "@storybook/react-vite": "^8.3.5",
-    "storybook": "^8.3.5"
+    "@storybook/addon-essentials": "8.6.18",
+    "@storybook/addon-interactions": "8.6.18",
+    "@storybook/blocks": "8.6.18",
+    "@storybook/react": "8.6.18",
+    "@storybook/react-vite": "8.6.18",
+    "storybook": "8.6.18"
   }
 }
